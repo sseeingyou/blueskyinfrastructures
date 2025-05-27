@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="126" height="18" viewBox="0 0 126 18" fill="none">
+  <ellipse opacity="0.15" cx="8.5" cy="9" rx="8.5" ry="9" transform="matrix(1 0 0 -1 0 18)" fill="#2DABE2"/>
+  <ellipse opacity="0.25" cx="8.5" cy="9" rx="8.5" ry="9" transform="matrix(1 0 0 -1 27 18)" fill="#2DABE2"/>
+  <circle opacity="0.5" cx="9" cy="9" r="9" transform="matrix(1 0 0 -1 54 18)" fill="#2DABE2"/>
+  <ellipse opacity="0.75" cx="8.5" cy="9" rx="8.5" ry="9" transform="matrix(1 0 0 -1 82 18)" fill="#2DABE2"/>
+  <ellipse cx="8.5" cy="9" rx="8.5" ry="9" transform="matrix(1 0 0 -1 109 18)" fill="#2DABE2"/>
+</svg> 
