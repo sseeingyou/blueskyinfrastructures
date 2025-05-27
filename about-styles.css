@@ -77,48 +77,39 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.login-container {
+.about-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex: 1;
-    padding-left: 20rem;
+    padding: 0 3rem;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .text-group {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
-.menu-text {
-    width: 32.3125rem;
-    height: 8.1125rem;
+.about-text {
+    width: 29.375rem;
+    height: 7.375rem;
     flex-shrink: 0;
-    color: #2DABE2;
-    text-align: right;
+    color: #FFF;
+    text-align: left;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #2DABE2;
     font-family: "FOT-NewRodin Pro";
-    font-size: 4.95rem;
+    font-size: 4.5rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
     cursor: pointer;
     transition: all 0.25s ease;
-}
-
-.menu-text:hover {
-    color: #FFF;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #2DABE2;
-}
-
-.menu-link {
-    text-decoration: none;
-    color: inherit;
 }
 
 .footer {
@@ -137,4 +128,73 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.info-container {
+    width: 51.0625rem;
+    height: 25.5625rem;
+    flex-shrink: 0;
+    border-radius: 2.25rem;
+    border: 1px solid #000;
+    background: #FDFAFA;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-header {
+    color: #000;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.info-subheader {
+    color: #000;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.info-footer {
+    color: #000;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.back-link {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    color: #000;
+    text-align: center;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    z-index: 1002;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 0.7;
 } 
