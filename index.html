@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Screen</title>
+    <title>Bluesky Infrastructures</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="about-styles.css">
 </head>
 <body>
-    <div class="loading-container">
+    <!-- Video Background Container -->
+    <div class="video-background">
+        <video id="bgVideo" autoplay muted loop playsinline poster="videos/login-last-frame.png"></video>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-container">
         <div class="loading-card">
             <div class="placeholder-image"></div>
             <p class="loading-text">loading...</p>
@@ -20,9 +28,52 @@
             </div>
         </div>
     </div>
+
+    <!-- Login/Home Page -->
+    <div id="home-page" class="page" style="display: none;">
+        <nav class="top-nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#login" class="nav-link">Log In</a>
+            <a href="#signup" class="nav-link">Sign Up</a>
+        </nav>
+
+        <div class="main-content">
+            <a href="#" class="begin-today">Begin Today</a>
+        </div>
+
+        <div class="logo-container">
+            <img src="../Images/flippedlogo.png" alt="Bluesky Logo" class="logo">
+        </div>
+        <div class="diagonal-background"></div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page" class="page" style="display: none;">
+        <a href="#home" class="back-link">Back</a>
+        <div class="corner-triangle"></div>
+        <div class="corner-logo">
+            <img src="../Images/regularlogo.png" alt="Bluesky Logo">
+        </div>
+        <div class="mouse-lines">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        <div class="about-container">
+            <div class="text-group">
+                <h1 class="about-text">ABOUT</h1>
+            </div>
+            <div class="info-container">
+                <div class="info-header">Bluesky Intrastructures</div>
+                <div class="info-subheader">Mission Statement</div>
+                <div class="info-footer">About</div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
-        <p>© 2025 Bluesky Intrastructures. All rights reserved.</p>
+        <p>© 2025 Bluesky Infrastructures. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html> 

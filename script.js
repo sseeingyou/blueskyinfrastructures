@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         // Once loading is complete, redirect to login page
         window.location.href = 'login.html';
-    }, 3000); // Redirect after 3 seconds
+    }, 4000); // Redirect after 3 seconds
 }); 

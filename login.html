@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Bluesky Intrastructures</title>
-    <link rel="stylesheet" href="login-styles.css">
+    <title>Bluesky Infrastructures</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="corner-triangle"></div>
-    <div class="corner-logo">
-        <img src="../Images/Logo1.svg" alt="Bluesky Logo">
+    <nav class="top-nav">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="login.html" class="nav-link">Log In</a>
+        <a href="signup.html" class="nav-link">Sign Up</a>
+    </nav>
+
+    <div class="main-content">
+        <a href="#" class="begin-today">Begin Today</a>
     </div>
-    <div class="mouse-lines">
-        <div class="horizontal-line"></div>
-        <div class="vertical-line"></div>
-    </div>
-    <div class="login-container">
-        <div class="text-group">
-            <h1 class="menu-text">LOG IN</h1>
-            <h1 class="menu-text">SIGN UP</h1>
-            <a href="about.html" class="menu-link">
-                <h1 class="menu-text">ABOUT</h1>
-            </a>
+
+    <div class="logo-container">
+        <img src="../Images/Logo2.jpg" alt="Bluesky Logo" class="logo">
+        <div class="company-name">
+            <span>Bluesky</span>
+            <span>Infrastructures</span>
         </div>
     </div>
-    <footer class="footer">
-        <p>© 2025 Bluesky Intrastructures. All rights reserved.</p>
-    </footer>
-    <script src="mouse-animation.js"></script>
+
+    <script src="animations.js"></script>
 </body>
 </html> 
+
+<!-- blue background below -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .diagonal-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #164a96; /* blue */
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="diagonal-background"></div>
+
+
+</body>
+</html>
