@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skybox</title>
+
+  <!-- Main site styles (optional) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Skybox-specific styles -->
+  <link rel="stylesheet" href="skybox.css">
+
+  <style>
+    /* Fallback styles if skybox.css doesn't exist yet */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      height: 10000px; /* Enables vertical scroll */
+    }
+
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <!-- Three.js skybox logic -->
+  <script type="module" src="skybox.js"></script>
+</body>
+</html>

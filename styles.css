@@ -199,23 +199,28 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -2;
     overflow: hidden;
+    background: white; /* fallback color */
 }
 
 .video-background video {
     position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: none;
+    max-height: none;
+    transform: none;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    background: white; /* fallback color */
 }
 
 /* Page Transitions */
@@ -232,18 +237,350 @@ body {
 
 .diagonal-background {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 35vw;
+    height: 25vh;
     background-color: #164a96;
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 100%, 100% 100%, 0 0); /* Right angle now at bottom-left */
     z-index: -1;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
+
+
 #home-page .diagonal-background {
     opacity: 1;
+}
+
+.top-banner {
+    width: 100%;
+    height: 120px;
+    background-color: #00489e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.about-close {
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1100;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.about-close:hover {
+    opacity: 0.7;
+}
+
+.about-mission-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.about-mission-title {
+    color: #000;
+    text-align: center;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 42px;
+}
+
+.about-mission-text {
+    color: #000;
+    text-align: center;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+}
+
+.signup-center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 991px;
+    height: 519px;
+    border-radius: 47px;
+    background: #FAFAFA;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+#signup-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px 48px;
+    box-sizing: border-box;
+}
+.signup-left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+}
+.signup-left label {
+    font-size: 17px;
+    color: #111;
+    font-family: "G-OTF Shin Go Pro";
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.signup-input {
+    border: none;
+    border-bottom: 2px solid #222;
+    background: transparent;
+    font-size: 10px;
+    padding: 8px 0 4px 0;
+    outline: none;
+    font-family: "G-OTF Shin Go Pro";
+    margin-bottom: 8px;
+}
+.color-picker-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 10px;
+}
+#favColor {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+.color-bubble {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #004489;
+    border: 2px solid #eee;
+    display: inline-block;
+}
+.color-hex {
+    font-size: 22px;
+    margin-left: 8px;
+    color: #222;
+    font-family: "G-OTF Shin Go Pro";
+}
+.signup-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.avatar-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #00489e;
+    position: relative;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.avatar-placeholder::before {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 90px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    position: absolute;
+    top: 38px;
+    left: 55px;
+}
+.avatar-placeholder::after {
+    content: '';
+    display: block;
+    width: 135px;
+    height: 67px;
+    background: #D9D9D9;
+    border-radius: 0 0 90px 90px;
+    position: absolute;
+    bottom: 0;
+    left: 32px;
+}
+.avatar-placeholder.has-image::before,
+.avatar-placeholder.has-image::after {
+    display: none;
+}
+.upload-label {
+    color: #222;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "G-OTF Shin Go Pro";
+    margin-top: 8px;
+    text-decoration: underline;
+}
+.join-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 12px 12px 0;
+    background: none;
+    color: #3A6DCC;
+    font-size: 32px;
+    font-family: "G-OTF Shin Go Pro";
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.join-btn:hover {
+    opacity: 0.7;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    text-align: center;
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 20px;
+    color: #003366;
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+}
+.close-modal:hover {
+    color: #222;
+}
+
+.signup-title-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+.signup-title {
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 34px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 -6px 0;
+}
+.signup-subtitle {
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 20px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 0;
+}
+
+.configuring-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "G-OTF Shin Go Pro";
+    font-size: 2rem;
+    color: #003366;
+    text-align: center;
+    z-index: 10;
+    letter-spacing: 2px;
+}
+.configuring-text span {
+    font-size: 2.2rem;
+    font-weight: bold;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+#video-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#bgVideo,
+#bgVideoNext {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Optionally remove or override old .video-background rules */
+.video-background, .video-background video {
+  display: none !important;
+}
+
+#loading-screen {
+  background: white !important;
 } 
   

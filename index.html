@@ -10,8 +10,9 @@
 </head>
 <body>
     <!-- Video Background Container -->
-    <div class="video-background">
-        <video id="bgVideo" autoplay muted loop playsinline poster="videos/login-last-frame.png"></video>
+    <div id="video-container">
+        <video id="bgVideo" muted autoplay playsinline poster="videos/login-last-frame.png"></video>
+        <video id="bgVideoNext" muted autoplay playsinline></video>
     </div>
 
     <!-- Loading Screen -->
@@ -49,24 +50,69 @@
 
     <!-- About Page -->
     <div id="about-page" class="page" style="display: none;">
-        <a href="#home" class="back-link">Back</a>
-        <div class="corner-triangle"></div>
-        <div class="corner-logo">
-            <img src="../Images/regularlogo.png" alt="Bluesky Logo">
+        <div class="top-banner">
+            <a href="#home" class="about-close">&#10005;</a>
         </div>
-        <div class="mouse-lines">
-            <div class="horizontal-line"></div>
-            <div class="vertical-line"></div>
+        <div class="about-mission-container">
+            <h1 class="about-mission-title">Our Mission</h1>
+            <p class="about-mission-text">
+                At Bluesky Intrastructures, we are committed to redefining the boundaries of possibility. Our mission is to architect intangible systems that exist just beyond comprehension — infrastructures not grounded in earth, but suspended in perpetual ascent. We believe the sky is not the limit; its the starting point. Through abstract computation, non-linear data flows, and synthetic clarity, we promise to deliver the future of infrastructure — even if it never arrives.<br>
+                We don't build for today. We build for an imagined tomorrow.
+            </p>
         </div>
-        <div class="about-container">
-            <div class="text-group">
-                <h1 class="about-text">ABOUT</h1>
-            </div>
-            <div class="info-container">
-                <div class="info-header">Bluesky Intrastructures</div>
-                <div class="info-subheader">Mission Statement</div>
-                <div class="info-footer">About</div>
-            </div>
+        <div class="logo-container">
+            <img src="../Images/regularlogo.png" alt="Bluesky Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div id="signup-page" class="page" style="display: none;">
+        <div class="signup-title-container">
+            <h2 class="signup-title">Profile</h2>
+            <div class="signup-subtitle">Customise Your Bluesky Identity</div>
+        </div>
+        <div class="signup-center-container">
+            <form id="signup-form" autocomplete="off">
+                <div class="signup-left">
+                    <label>First Name
+                        <input type="text" name="firstName" class="signup-input" autocomplete="off" />
+                    </label>
+                    <label>Last Name
+                        <input type="text" name="lastName" class="signup-input" autocomplete="off" />
+                    </label>
+                    <label>Username
+                        <input type="text" name="username" class="signup-input" autocomplete="off" />
+                    </label>
+                    <label>About Me
+                        <input type="text" name="aboutMe" class="signup-input" autocomplete="off" />
+                    </label>
+                </div>
+                <div class="signup-right">
+                    <div class="avatar-container">
+                        <div class="avatar-placeholder"></div>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display:none;" />
+                        <label for="avatar-upload" class="upload-label">upload</label>
+                        <div class="color-picker-row">
+                            <span>Favorite Color</span>
+                            <input type="color" id="favColor" name="favColor" value="#004489" />
+                            <span id="color-bubble" class="color-bubble"></span>
+                            <span id="color-hex" class="color-hex">#004489</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="join-btn">Join Us</button>
+                </div>
+            </form>
+        </div>
+        <div class="logo-container">
+            <img src="../Images/regularlogo.png" alt="Bluesky Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login-modal">&times;</span>
+            <p>No Account Found, Sign Up to Begin</p>
         </div>
     </div>
 
@@ -75,5 +121,6 @@
     </footer>
 
     <script src="app.js"></script>
+    <div id="fade-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:white;opacity:0;pointer-events:none;z-index:9999;transition:opacity 0.5s;"></div>
 </body>
 </html> 
