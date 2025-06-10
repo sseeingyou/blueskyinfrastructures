@@ -37,7 +37,65 @@
 </head>
 <body>
   <canvas id="bg"></canvas>
+  <audio id="wind1" src="audio/wind.mp3" preload="auto" loop="false" autoplay style="display:none"></audio>
+  <audio id="wind2" src="audio/wind.mp3" preload="auto" loop="false" style="display:none"></audio>
+  <script>
+    // Crossfade wind audio
+    const wind1 = document.getElementById('wind1');
+    const wind2 = document.getElementById('wind2');
+    let current = wind1, next = wind2;
+    let volume = 0.18; // Quiet volume
+    wind1.volume = volume;
+    wind2.volume = 0;
+    let crossfadeDuration = 3; // seconds
+    let isFirstPlay = true;
 
+    function startWindLoop(audio, onEnd) {
+      audio.currentTime = 0;
+      audio.volume = volume;
+      audio.play();
+      audio.onended = onEnd;
+    }
+
+    function crossfade() {
+      next.currentTime = 0;
+      next.volume = 0;
+      next.play();
+      let startTime = Date.now();
+      let fade = setInterval(() => {
+        let elapsed = (Date.now() - startTime) / 1000;
+        let t = Math.min(elapsed / crossfadeDuration, 1);
+        current.volume = volume * (1 - t);
+        next.volume = volume * t;
+        if (t >= 1) {
+          clearInterval(fade);
+          current.pause();
+          // Swap
+          let temp = current;
+          current = next;
+          next = temp;
+          // Set up next crossfade
+          let duration = current.duration;
+          if (!isNaN(duration) && duration > crossfadeDuration) {
+            setTimeout(crossfade, (duration - crossfadeDuration) * 1000);
+          }
+        }
+      }, 50);
+    }
+
+    wind1.addEventListener('canplaythrough', function init() {
+      wind1.removeEventListener('canplaythrough', init);
+      if (isFirstPlay) {
+        isFirstPlay = false;
+        startWindLoop(current, null);
+        // Schedule first crossfade
+        let duration = current.duration;
+        if (!isNaN(duration) && duration > crossfadeDuration) {
+          setTimeout(crossfade, (duration - crossfadeDuration) * 1000);
+        }
+      }
+    });
+  </script>
   <!-- Three.js skybox logic -->
   <script type="module" src="skybox.js"></script>
 </body>

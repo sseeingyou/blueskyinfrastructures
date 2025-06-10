@@ -131,7 +131,7 @@ window.addEventListener('load', () => {
             loadingScreen.style.display = 'none';
             navigateToCurrentHash();
         }, 1000);
-    }, 3000);
+    }, 5000);
 });
 
 // Handle navigation
